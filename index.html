@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>随机密码生成器-带特殊符</title>
+<link rel="alternate" href="/atom.xml" title="逐梦者" type="application/atom+xml">
+</head>
+<body>
+<br/>纯javascript,右键审计源码<hr>
+<br/>处于安全考虑最低是15位带符号，不存储任何信息，由设备计算
+<br>
+<script language="javascript">
+function randomPassword(size)
+{
+  var seed = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z',
+  'a','b','c','d','e','f','g','h','i','j','k','m','n','p','Q','r','s','t','u','v','w','x','y','z',
+  '2','3','4','5','6','7','8','9','!','$','%','#','@'
+  );//数组
+  seedlength = seed.length;//数组长度
+  var createPassword = '';
+  for (i=0;i<size;i++) {
+    j = Math.floor(Math.random()*seedlength);
+    createPassword += seed[j];
+  }
+  return createPassword;
+}
+</script>
+<script>
+    document.write(randomPassword(15));
+    </script><br>
+  <script>
+      document.write(randomPassword(15));
+      </script><br>
+<script>
+  document.write(randomPassword(15));
+  </script><br>
+  <script>
+    document.write(randomPassword(15));
+    </script><br>
+    <script>
+      document.write(randomPassword(15));
+      </script><hr>
+  <br>24位<br>
+  <script>
+    document.write(randomPassword(24));
+    </script><hr><br>64位<br>
+  <script>
+      document.write(randomPassword(64));
+      </script><hr><br>128位<br>
+<script>
+  document.write(randomPassword(128));
+  </script><hr><br>256位<br>
+  <script>
+    document.write(randomPassword(256));
+    </script><hr><br>512位<br>
+    <script>
+      document.write(randomPassword(512));
+      </script><hr><br>
+</body>
+</html>
